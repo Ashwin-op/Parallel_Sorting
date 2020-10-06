@@ -1,5 +1,5 @@
 /*
- * Quicksort with Uncontrolled forking. Spawn as many processes as needed in order to completely sort an array of ints.
+ * Quicksort with Uncontrolled forking. Spawn as many processes as needed to completely sort an array of ints.
  */
 #include <time.h>
 #include <stdio.h>
@@ -20,7 +20,7 @@ double wctime()
 
 /* Declarations */
 /*
- * Swap elements in the array that is being sorted.
+ * Swap elements in the array that are being sorted.
  */
 void swap(int array[], int left, int right)
 {
@@ -79,7 +79,7 @@ void quicksortParallel(int array[], int left, int right)
         int status; // For waitpid() only
 
         /*
-         * Select pivot position and put all the elements smaller than pivot on left and greater than pivot on right
+         * Select pivot position and put all the elements smaller than pivot on the left and greater than pivot on the right
          */
         pivot_new_index = partition(array, left, right, pivot_index);
 
@@ -133,7 +133,7 @@ void quicksortSerial(int array[], int left, int right)
     if (left < right)
     {
         /*
-         * Select pivot position and put all the elements smaller than pivot on left and greater than pivot on right
+         * Select pivot position and put all the elements smaller than pivot on the left and greater than pivot on the right
          */
         pivot_new_index = partition(array, left, right, pivot_index);
 
@@ -160,7 +160,7 @@ int main()
         array[i] = rand() % 10;
     // display(array, length);
 
-    // Use this process's pid as the shared memory key identifier
+    // Use this process's PID as the shared memory key identifier
     key_t key = IPC_PRIVATE;
 
     // Create the shared memory segment

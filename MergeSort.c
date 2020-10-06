@@ -1,5 +1,5 @@
 /*
- * Mergesort with Uncontrolled forking. Spawn as many processes as needed in order to completely sort an array of ints.
+ * Mergesort with Uncontrolled forking. Spawn as many processes as needed to completely sort an array of ints.
  */
 #include <time.h>
 #include <stdio.h>
@@ -221,7 +221,7 @@ int main()
         array[i] = rand() % 10000;
     // display(array, length);
 
-    // Use this process's pid as the shared memory key identifier
+    // Use this process's PID as the shared memory key identifier
     key_t key = IPC_PRIVATE;
 
     // Create the shared memory segment
